@@ -2,47 +2,53 @@
 body {
   text-align: center;
   background-color: #011F3F;
-  height: 100%;
+  height: 100vh;             /* Full viewport height */
   margin: 0;
+  display: flex;
+  justify-content: center;   /* Center the content horizontally */
+  align-items: center;       /* Center the content vertically */
+  flex-direction: column;    /* Stack elements vertically */
   font-family: Arial, sans-serif;
+  overflow: hidden;          /* Prevent scrolling */
 }
 
 /* Title styles */
 #level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 6vw;  /* Dynamic font size based on viewport width */
-  margin: 5%;
+  font-size: 8vw;             /* Dynamic font size based on viewport width */
+  margin: 0;
   color: #FEF2BF;
 }
 
 /* High score styles */
 #high-score {
   font-family: 'Press Start 2P', cursive;
-  font-size: 4vw;  /* Dynamic font size */
-  margin: 5%;
+  font-size: 5vw;             /* Dynamic font size */
+  margin: 2vh 0;
   color: #b4a76b;
 }
 
-/* Container styles for form or buttons */
+/* Container for buttons */
 .container {
-  display: flex;           /* Use Flexbox for better alignment */
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
-  width: 100%;
-  min-height: 50vh;        /* Ensures container height adjusts based on screen size */
-  margin: 0;
-  flex-wrap: wrap;         /* Allows wrapping on smaller screens */
+  display: flex;
+  flex-wrap: wrap;            /* Allow wrapping for buttons */
+  justify-content: center;    /* Center buttons horizontally */
+  align-items: center;       /* Center buttons vertically */
+  width: 80vw;                /* 80% of the viewport width */
+  min-height: 50vh;           /* Ensures container has a minimum height */
+  margin-top: 2vh;
 }
 
 /* Button styles */
 .btn {
-  margin: 2%;
+  margin: 1vw;
   display: inline-block;
-  height: 20vw;             /* Dynamic button height based on viewport width */
-  width: 20vw;              /* Dynamic button width based on viewport width */
+  height: 15vw;              /* Dynamic button height based on viewport width */
+  width: 15vw;               /* Dynamic button width based on viewport width */
   border: 10px solid black;
   border-radius: 20%;
   transition: all 0.2s ease; /* Smooth transition for hover and press effects */
+  cursor: pointer;
 }
 
 .game-over {
@@ -76,7 +82,28 @@ body {
 /* For small devices like mobile phones */
 @media (max-width: 600px) {
   #level-title {
-    font-size: 10vw;  /* Larger font on small screens */
+    font-size: 12vw;  /* Larger font on small screens */
+  }
+
+  #high-score {
+    font-size: 8vw;
+  }
+
+  .btn {
+    height: 25vw;     /* Larger buttons on small screens */
+    width: 25vw;
+  }
+
+  .container {
+    width: 90vw;      /* 90% of the viewport width for small screens */
+    min-height: 40vh;  /* Decrease height for smaller screens */
+  }
+}
+
+/* For medium devices like tablets */
+@media (max-width: 1024px) {
+  #level-title {
+    font-size: 10vw;  /* Larger font on tablets */
   }
 
   #high-score {
@@ -84,23 +111,12 @@ body {
   }
 
   .btn {
-    height: 30vw;  /* Bigger buttons on smaller screens */
-    width: 30vw;
-  }
-}
-
-/* For medium devices like tablets */
-@media (max-width: 1024px) {
-  #level-title {
-    font-size: 8vw;
+    height: 20vw;      /* Medium size buttons */
+    width: 20vw;
   }
 
-  #high-score {
-    font-size: 5vw;
-  }
-
-  .btn {
-    height: 25vw;
-    width: 25vw;
+  .container {
+    width: 85vw;       /* Adjust container width */
+    min-height: 45vh;   /* Adjust container height */
   }
 }
